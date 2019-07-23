@@ -7,11 +7,24 @@
         mc:Ignorable="d"
         Title="Калькулятор" Height="450" Width="800" ResizeMode="NoResize"
         Topmost="False" WindowState="Normal" Icon="./Resources\icon.png" >
-    <StackPanel Orientation="Vertical">
-        <Label x:Name="firstText" Content="Calculator" HorizontalAlignment="Center"   FontFamily="Bookman Old Style" FontWeight="Bold" FontSize="30" FontStyle="Italic" />
-        <Label x:Name="closeLabel" Content="Привет всем!" HorizontalAlignment="Center" MouseDoubleClick="CloseLabel_MouseDoubleClick"/>
-        <TextBox x:Name="userInput" Height="32" TextWrapping="Wrap" HorizontalAlignment="Center"  Width="300" FontSize="20" />
-        <Button x:Name="buttonMassageBox" Content="Открыть окно" Width="200" Margin="0,20" Click="ButtonMassageBox_Click" />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-    </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <Label x:Name="firstText" Content="Calculator" HorizontalAlignment="Center"   FontFamily="Bookman Old Style" FontWeight="Bold" FontSize="30" FontStyle="Italic" />
+            <Label x:Name="closeLabel" Content="Привет всем!" HorizontalAlignment="Center" MouseDoubleClick="CloseLabel_MouseDoubleClick"/>
+            <TextBox x:Name="userInputField" Height="32" TextWrapping="Wrap" HorizontalAlignment="Center"  Width="300" FontSize="20" />
+            <Button x:Name="buttonMassageBox" Content="Открыть окно" Width="200" Margin="0,20" Click="ButtonMassageBox_Click" />
+        </StackPanel>
+        <Button x:Name="getInput" Content="Получить данные от полльзователя"  Grid.Row="1"  Width="208" Height="25" Click="GetInput_Click"/>
+
+    </Grid>
 </Window>

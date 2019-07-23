@@ -38,5 +38,12 @@ namespace ExampleApp
         {
             this.Close();
         }
+
+        private void GetInput_Click(object sender, RoutedEventArgs e)
+        {
+            string userInput = userInputField.Text;
+            if (userInput != "")
+                MessageBox.Show(userInput);
+        }
     }
 }
