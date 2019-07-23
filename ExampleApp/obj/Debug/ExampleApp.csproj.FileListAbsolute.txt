@@ -1,0 +1,15 @@
+D:\GitHub\ExampleApp\ExampleApp\bin\Debug\ExampleApp.exe.config
+D:\GitHub\ExampleApp\ExampleApp\bin\Debug\ExampleApp.exe
+D:\GitHub\ExampleApp\ExampleApp\bin\Debug\ExampleApp.pdb
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csprojAssemblyReference.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\MainWindow.g.cs
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\App.g.cs
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp_MarkupCompile.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp_MarkupCompile.lref
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\MainWindow.baml
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.g.resources
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.Properties.Resources.resources
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csproj.GenerateResource.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csproj.CoreCompileInputs.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.exe
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.pdb

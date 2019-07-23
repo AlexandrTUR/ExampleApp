@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExampleApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Калькулятор" Height="450" Width="800" ResizeMode="NoResize"
+        Topmost="False" WindowState="Normal" Icon="./Resources\icon.png" >
+    <StackPanel Orientation="Vertical">
+        <Label x:Name="firstText" Content="Calculator" HorizontalAlignment="Center"   FontFamily="Bookman Old Style" FontWeight="Bold" FontSize="30" FontStyle="Italic" />
+        <Label x:Name="closeLabel" Content="Привет всем!" HorizontalAlignment="Center" MouseDoubleClick="CloseLabel_MouseDoubleClick"/>
+        <TextBox x:Name="userInput" Height="32" TextWrapping="Wrap" HorizontalAlignment="Center"  Width="300" FontSize="20" />
+        <Button x:Name="buttonMassageBox" Content="Открыть окно" Width="200" Margin="0,20" Click="ButtonMassageBox_Click" />
+
+    </StackPanel>
 </Window>

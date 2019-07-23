@@ -23,6 +23,20 @@ namespace ExampleApp
         public MainWindow()
         {
             InitializeComponent();
+
+            // this.Title = "Hello To All";        //задаём значение для title
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;  // установка укна в центр
+
+        }
+
+        private void ButtonMassageBox_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Мы открыли дополнительное окно!");
+        }
+
+        private void CloseLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }
