@@ -12,18 +12,19 @@
 
         <Menu DockPanel.Dock="Top">
             <MenuItem x:Name="menuFile" Header="Файл">
-                <MenuItem x:Name="createNewFile" Header="Создать новый файл">
+                <MenuItem x:Name="createNewFile" Header="Создать">
                     <MenuItem.Icon>
                         <Image Source="Resources/openFile.ico"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="openNewFile" Header="Открыть новый файл" Click="OpenNewFile_Click">
+                <MenuItem x:Name="openNewFile" Header="Открыть" Click="OpenNewFile_Click">
                 </MenuItem>
-                <MenuItem x:Name="saveNewFile" Header="Сохранить новый файл" Click="SaveNewFile_Click">
+                <MenuItem x:Name="saveNewFile" Header="Сохранить" Click="SaveNewFile_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/saveFile.ico"/>
                     </MenuItem.Icon>
                 </MenuItem>
+                <Separator/>
                 <MenuItem x:Name="exitProgram" Header="Выйти" Click="ExitProgram_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/exit.ico"/>
@@ -39,6 +40,19 @@
                     <MenuItem x:Name="verdanaFont" Header="verdana" IsCheckable="True" 
                               StaysOpenOnClick="True" Click="VerdanaFont_Click">
                     </MenuItem>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="copyText" Header="Скопировать"
+                          Command="ApplicationCommands.Copy"
+                          InputGestureText="Ctr+C">
+                </MenuItem>
+                <MenuItem x:Name="pasteText" Header="Вставить"
+                          Command="ApplicationCommands.Paste"
+                          InputGestureText="Ctr+V">
+                </MenuItem>
+                <MenuItem x:Name="cutText" Header="Вырезать"
+                          Command="ApplicationCommands.Cut"
+                          InputGestureText="Ctr+X">
                 </MenuItem>
             </MenuItem>
         </Menu>

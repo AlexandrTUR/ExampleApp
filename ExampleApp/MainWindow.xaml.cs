@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,29 +30,28 @@ namespace ExampleApp
 
         }
 
-        private void ExitProgram_Click(object sender, RoutedEventArgs e)
-        {
+        private void ExitProgram_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
 
-        private void SaveNewFile_Click(object sender, RoutedEventArgs e)
-        {
-
+        private void SaveNewFile_Click(object sender, RoutedEventArgs e) {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.ShowDialog();
         }
 
-        private void OpenNewFile_Click(object sender, RoutedEventArgs e)
-        {
-
+        private void OpenNewFile_Click(object sender, RoutedEventArgs e) {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();  
         }
 
-        private void TimesNewRomanFont_Click(object sender, RoutedEventArgs e)
-        {
-
+        private void TimesNewRomanFont_Click(object sender, RoutedEventArgs e) {
+            textBox.FontFamily = new FontFamily("Times new Roman");
+            verdanaFont.IsChecked = false;
         }
 
-        private void VerdanaFont_Click(object sender, RoutedEventArgs e)
-        {
-
+        private void VerdanaFont_Click(object sender, RoutedEventArgs e) {
+            textBox.FontFamily = new FontFamily("Verdana");
+            timesNewRomanFont.IsChecked = false;
         }
     }
 }
