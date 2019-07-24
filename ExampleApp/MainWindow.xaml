@@ -5,26 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExampleApp"
         mc:Ignorable="d"
-        Title="Калькулятор" Height="450" Width="800" ResizeMode="NoResize"
+        Title="Текстовый редактор" Height="450" Width="800" ResizeMode="NoResize"
         Topmost="False" WindowState="Normal" Icon="./Resources\icon.png" >
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <DockPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Column="1">
-            <Label x:Name="firstText" Content="Calculator" HorizontalAlignment="Center"   FontFamily="Bookman Old Style" FontWeight="Bold" FontSize="30" FontStyle="Italic" />
-            <Label x:Name="closeLabel" Content="Привет всем!" HorizontalAlignment="Center" MouseDoubleClick="CloseLabel_MouseDoubleClick"/>
-            <TextBox x:Name="userInputField" Height="32" TextWrapping="Wrap" HorizontalAlignment="Center"  Width="300" FontSize="20" />
-            <Button x:Name="buttonMassageBox" Content="Открыть окно" Width="200" Margin="0,20" Click="ButtonMassageBox_Click" />
-        </StackPanel>
-        <Button x:Name="getInput" Content="Получить данные от полльзователя"  Grid.Row="1"  Width="208" Height="25" Click="GetInput_Click"/>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="menuFile" Header="Файл">
+                <MenuItem x:Name="createNewFile" Header="Создать новый файл">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/openFile.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="openNewFile" Header="Открыть новый файл" Click="OpenNewFile_Click">
+                </MenuItem>
+                <MenuItem x:Name="saveNewFile" Header="Сохранить новый файл" Click="SaveNewFile_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/saveFile.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="exitProgram" Header="Выйти" Click="ExitProgram_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/exit.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+               
+            </MenuItem>
+            <MenuItem x:Name="menuEdit" Header="Редактировать">
+                <MenuItem x:Name="selectFont" Header="Шрифт">
+                    <MenuItem x:Name="timesNewRomanFont" Header="timesNewRoman" IsCheckable="True" 
+                              StaysOpenOnClick="True" Click="TimesNewRomanFont_Click">
+                    </MenuItem>
+                    <MenuItem x:Name="verdanaFont" Header="verdana" IsCheckable="True" 
+                              StaysOpenOnClick="True" Click="VerdanaFont_Click">
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
 
-    </Grid>
+        <TextBox x:Name="textBox" Width="786" Margin="0,5,0,1"/>
+
+    </DockPanel>
+
 </Window>

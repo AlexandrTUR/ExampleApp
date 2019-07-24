@@ -29,21 +29,29 @@ namespace ExampleApp
 
         }
 
-        private void ButtonMassageBox_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Мы открыли дополнительное окно!");
-        }
-
-        private void CloseLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ExitProgram_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void GetInput_Click(object sender, RoutedEventArgs e)
+        private void SaveNewFile_Click(object sender, RoutedEventArgs e)
         {
-            string userInput = userInputField.Text;
-            if (userInput != "")
-                MessageBox.Show(userInput);
+
+        }
+
+        private void OpenNewFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TimesNewRomanFont_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VerdanaFont_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
