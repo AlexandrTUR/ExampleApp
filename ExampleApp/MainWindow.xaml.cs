@@ -34,7 +34,7 @@ namespace ExampleApp
             this.Close();
         }
 
-        private void SaveNewFile_Click(object sender, RoutedEventArgs e) {
+        private void SaveFile_Click(object sender, RoutedEventArgs e) {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.ShowDialog();
         }
@@ -52,6 +52,33 @@ namespace ExampleApp
         private void VerdanaFont_Click(object sender, RoutedEventArgs e) {
             textBox.FontFamily = new FontFamily("Verdana");
             timesNewRomanFont.IsChecked = false;
+        }
+
+        private void SelectFotnSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string fontSize = selectFotnSize.SelectedItem.ToString();
+            fontSize = fontSize.Substring(fontSize.Length - 2);
+            switch (fontSize)
+            {
+                case "10":
+                    textBox.FontSize = 10;
+                    break;
+                case "12":
+                    textBox.FontSize = 12;
+                    break;
+                case "14":
+                    textBox.FontSize = 14;
+                    break;
+                case "16":
+                    textBox.FontSize = 16;
+                    break;
+                case "18":
+                    textBox.FontSize = 18;
+                    break;
+                case "20":
+                    textBox.FontSize = 20;
+                    break;
+            }
         }
     }
 }

@@ -19,7 +19,7 @@
                 </MenuItem>
                 <MenuItem x:Name="openNewFile" Header="Открыть" Click="OpenNewFile_Click">
                 </MenuItem>
-                <MenuItem x:Name="saveNewFile" Header="Сохранить" Click="SaveNewFile_Click">
+                <MenuItem x:Name="saveNewFile" Header="Сохранить" Click="SaveFile_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/saveFile.ico"/>
                     </MenuItem.Icon>
@@ -30,7 +30,7 @@
                         <Image Source="Resources/exit.ico"/>
                     </MenuItem.Icon>
                 </MenuItem>
-               
+
             </MenuItem>
             <MenuItem x:Name="menuEdit" Header="Редактировать">
                 <MenuItem x:Name="selectFont" Header="Шрифт">
@@ -57,7 +57,37 @@
             </MenuItem>
         </Menu>
 
-        <TextBox x:Name="textBox" Width="786" Margin="0,5,0,1"/>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button x:Name="btnSave" ToolTip="Сохранить файл" Click="SaveFile_Click">
+                    <Image Source="./Resources/saveFile.ico" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="btnOpen" ToolTip="Открыть" Click="OpenNewFile_Click">
+                    <Image Source="Resources/openFile.ico" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="btnCut" ToolTip="Вырезать текст"  Command="ApplicationCommands.Cut">
+                    <Image Source="Resources/cut.ico" Height="25" Width="25"></Image>
+                </Button>
+                <Button x:Name="btnPaste" ToolTip="Вставить текс текст"  Command="ApplicationCommands.Paste">
+                    <Image Source="Resources/paste.ico" Height="25" Width="25"></Image>
+                </Button>
+
+                <Label>Размер шрифта:</Label>
+                <ComboBox x:Name="selectFotnSize"
+                          SelectionChanged="SelectFotnSize_SelectionChanged">
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>12</ComboBoxItem>
+                    <ComboBoxItem IsSelected ="true">14</ComboBoxItem>
+                    <ComboBoxItem>16</ComboBoxItem>
+                    <ComboBoxItem>18</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                </ComboBox>
+
+            </ToolBar>
+
+        </ToolBarTray>
+
+        <TextBox x:Name="textBox" Width="786" Margin="0,4,0,2" FontSize="14"/>
 
     </DockPanel>
 
