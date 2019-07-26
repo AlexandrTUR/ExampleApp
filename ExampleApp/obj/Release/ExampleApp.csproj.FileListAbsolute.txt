@@ -1,0 +1,14 @@
+D:\GitHub\ExampleApp\ExampleApp\bin\Release\ExampleApp.exe.config
+D:\GitHub\ExampleApp\ExampleApp\bin\Release\ExampleApp.exe
+D:\GitHub\ExampleApp\ExampleApp\bin\Release\ExampleApp.pdb
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\MainWindow.g.cs
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\App.g.cs
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp_MarkupCompile.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp_MarkupCompile.lref
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\MainWindow.baml
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp.g.resources
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp.Properties.Resources.resources
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp.csproj.GenerateResource.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp.csproj.CoreCompileInputs.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp.exe
+D:\GitHub\ExampleApp\ExampleApp\obj\Release\ExampleApp.pdb

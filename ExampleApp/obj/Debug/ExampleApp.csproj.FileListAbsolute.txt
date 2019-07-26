@@ -12,4 +12,3 @@ D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csproj.GenerateResource.cac
 D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csproj.CoreCompileInputs.cache
 D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.exe
 D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.pdb
-D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csprojAssemblyReference.cache

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace ExampleApp
 {
@@ -35,15 +36,24 @@ namespace ExampleApp
         }
 
         private void SaveFile_Click(object sender, RoutedEventArgs e) {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.ShowDialog();
+            saveToFile();
         }
 
-        private void OpenNewFile_Click(object sender, RoutedEventArgs e) {
+        private void OpenNewFile_Click(object sender, RoutedEventArgs e) { 
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.ShowDialog();  
-        }
 
+            bool? res = ofd.ShowDialog(); // чтобы можно было поместить значение null в bool
+
+            if (res != false) { 
+                Stream myStream;
+                if ((myStream = ofd.OpenFile()) != null)
+                {
+                    string file_name = ofd.FileName;
+                    string file_text = File.ReadAllText(file_name);
+                    textBox.Text = file_text;
+                }
+            }
+        }
         private void TimesNewRomanFont_Click(object sender, RoutedEventArgs e) {
             textBox.FontFamily = new FontFamily("Times new Roman");
             verdanaFont.IsChecked = false;
@@ -54,8 +64,7 @@ namespace ExampleApp
             timesNewRomanFont.IsChecked = false;
         }
 
-        private void SelectFotnSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        private void SelectFotnSize_SelectionChanged(object sender, SelectionChangedEventArgs e) { 
             string fontSize = selectFotnSize.SelectedItem.ToString();
             fontSize = fontSize.Substring(fontSize.Length - 2);
             switch (fontSize)
@@ -78,6 +87,30 @@ namespace ExampleApp
                 case "20":
                     textBox.FontSize = 20;
                     break;
+            }
+        }
+
+        private void CreateNewFile_Click(object sender, RoutedEventArgs e) {
+            if (textBox.Text != "") {
+                saveToFile();
+            }
+            textBox.Text = "";
+
+        }
+
+        private void saveToFile() {
+            SaveFileDialog sfd = new SaveFileDialog();
+             bool ? res = sfd.ShowDialog();
+
+            if (res!= false) { 
+            using (Stream s = File.Open(sfd.FileName, FileMode.OpenOrCreate))
+            {
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    sw.Write(textBox.Text);
+                }
+
+                }
             }
         }
     }

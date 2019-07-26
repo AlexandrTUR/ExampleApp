@@ -94,9 +94,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\exit.ico" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cut.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\openFile.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paste.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\saveFile.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
