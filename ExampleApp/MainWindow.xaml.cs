@@ -1,5 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,15 +33,18 @@ namespace ExampleApp
 
         }
 
-        private void ExitProgram_Click(object sender, RoutedEventArgs e) {
+        private void ExitProgram_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
 
-        private void SaveFile_Click(object sender, RoutedEventArgs e) {
+        private void SaveFile_Click(object sender, RoutedEventArgs e)
+        {
             saveToFile();
         }
 
-        private void OpenNewFile_Click(object sender, RoutedEventArgs e) { 
+        private void OpenNewFile_Click(object sender, RoutedEventArgs e)
+        { 
             OpenFileDialog ofd = new OpenFileDialog();
 
             bool? res = ofd.ShowDialog(); // чтобы можно было поместить значение null в bool
@@ -54,17 +59,20 @@ namespace ExampleApp
                 }
             }
         }
-        private void TimesNewRomanFont_Click(object sender, RoutedEventArgs e) {
+        private void TimesNewRomanFont_Click(object sender, RoutedEventArgs e)
+        {
             textBox.FontFamily = new FontFamily("Times new Roman");
             verdanaFont.IsChecked = false;
         }
 
-        private void VerdanaFont_Click(object sender, RoutedEventArgs e) {
+        private void VerdanaFont_Click(object sender, RoutedEventArgs e)
+        {
             textBox.FontFamily = new FontFamily("Verdana");
             timesNewRomanFont.IsChecked = false;
         }
 
-        private void SelectFotnSize_SelectionChanged(object sender, SelectionChangedEventArgs e) { 
+        private void SelectFotnSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        { 
             string fontSize = selectFotnSize.SelectedItem.ToString();
             fontSize = fontSize.Substring(fontSize.Length - 2);
             switch (fontSize)
@@ -90,7 +98,8 @@ namespace ExampleApp
             }
         }
 
-        private void CreateNewFile_Click(object sender, RoutedEventArgs e) {
+        private void CreateNewFile_Click(object sender, RoutedEventArgs e)
+        {
             if (textBox.Text != "") {
                 saveToFile();
             }
@@ -98,11 +107,13 @@ namespace ExampleApp
 
         }
 
-        private void saveToFile() {
+        private void saveToFile()
+        {
             SaveFileDialog sfd = new SaveFileDialog();
              bool ? res = sfd.ShowDialog();
 
-            if (res!= false) { 
+            if (res!= false)
+            { 
             using (Stream s = File.Open(sfd.FileName, FileMode.OpenOrCreate))
             {
                 using (StreamWriter sw = new StreamWriter(s))
@@ -111,6 +122,53 @@ namespace ExampleApp
                 }
 
                 }
+            }
+        }
+
+        private void RegBn_Click(object sender, RoutedEventArgs e)
+        {
+            string connectionString = ConfigurationManager.AppSettings["connectionString"];
+
+            SqlConnection sql = new SqlConnection(connectionString);
+
+            try
+            {
+                if (sql.State == System.Data.ConnectionState.Closed)
+                    sql.Open();
+
+                string query = "SELECT COUNT(1) FROM Users WHERE login=@login AND password=@pass";
+                SqlCommand sqlCom = new SqlCommand(query, sql);
+                sqlCom.CommandType = System.Data.CommandType.Text;
+                sqlCom.Parameters.Add("@login", loginField.Text);
+                sqlCom.Parameters.Add("@pass", passField.Password);
+
+                int countUser = Convert.ToInt32(sqlCom.ExecuteScalar());
+                if (countUser == 0)
+                {
+                    query = "INSERT INTO Users(login, password) VALUES(@login, @pass)";
+                    SqlCommand com = new SqlCommand(query, sql);
+                    com.CommandType = System.Data.CommandType.Text;
+                    com.Parameters.Add("@login", loginField.Text);
+                    com.Parameters.Add("@pass", passField.Password);
+
+                    com.ExecuteNonQuery();
+                    MessageBox.Show("Мы добавили вас в БД");
+                }
+                else {
+                    MessageBox.Show("Вы успешно авторизовались!");
+                    AuthPage authPage = new AuthPage();
+                    authPage.Show();
+
+                    App.Current.MainWindow.Hide();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally {
+                sql.Close();
             }
         }
     }

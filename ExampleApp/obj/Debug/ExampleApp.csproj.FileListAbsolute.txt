@@ -13,3 +13,5 @@ D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csproj.CoreCompileInputs.ca
 D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.exe
 D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.pdb
 D:\GitHub\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csprojAssemblyReference.cache
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\AuthPage.g.cs
+D:\GitHub\ExampleApp\ExampleApp\obj\Debug\AuthPage.baml
